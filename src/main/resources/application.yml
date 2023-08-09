@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-cloud-ms-internal-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: spring-cloud-ms-config-server
+      password: passwdconfig
+      username: usernameconfig
+  config:
+    import: 'optional:configserver:'
+  profiles:
+    active: dev
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
